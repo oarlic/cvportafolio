@@ -1,31 +1,22 @@
 [php]
 <?php
+$nombre = $_POST[‘nombre’];
+$email = $_POST[’email’];
+$mensaje = $_POST[‘mensaje’];
+$para = ‘ordaz.11r@gmail.com';
+$titulo = ‘ASUNTO DEL MENSAJE';
+$header = ‘From: ‘ . $email;
+$msjCorreo = "Nombre: $nombre\n E-Mail: $email\n Mensaje:\n $mensaje";
 
- $nombre = $_POST["nombre"];
-
- $correo = $_POST["correo"];
-
- $edad = $_POST["edad"];
-
- $fecha = $_POST["fecha"];
-
- $contenido = $_POST["contenido"];
-
- $para = "ordaz.11r@gmail.com";
- $asunto = "Nuevo Mensaje de $nombre";
- 
- $mensaje = "
-
- Nombre del remitente: ".$nombre."
- Correo: ".$correo."
- Edad: ".$edad."
- Fecha: ".$fecha."
- Mensaje: ".$contenido."
- ";
-
- mail($para,$asunto,utf8_decode($mensaje));
- 
- echo "<p><h2>Hemos recibido tu mensaje correctamente, pronto te contestaremos, gracias.</h2></p>";
-
+if ($_POST[‘submit’]) {
+if (mail($para, $titulo, $msjCorreo, $header)) {
+echo "<script language=’javascript’>
+alert(‘Mensaje enviado, muchas gracias.’);
+window.location.href = ‘http://oarlic.com';
+</script>";
+} else {
+echo ‘Falló el envio';
+}
+}
 ?>
 [/php]
