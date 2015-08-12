@@ -1,3 +1,4 @@
+[php]
 <?php
 
  $nombre = $_POST["nombre"];
@@ -27,3 +28,4 @@
  echo "<p><h2>Hemos recibido tu mensaje correctamente, pronto te contestaremos, gracias.</h2></p>";
 
 ?>
+[/php]
