@@ -57,7 +57,7 @@
             <li><a href="#exla"><i class="fa fa-suitcase menu_icon"></i>Experiencia Laboral</a></li>
             <!-- <li><a href="#experience"><i class="fa fa-suitcase menu_icon"></i>Portafolio</a></li> -->
             <li><a href="servicios.html"><i class="fa fa-wrench menu_icon"></i>Mis Servicios</a></li>
-            <li><a href="#contac"><i class="fa fa-envelope menu_icon"></i>Contacto</a></li>
+            <li><a href="#contaco"><i class="fa fa-envelope menu_icon"></i>Contacto</a></li>
           </ul> 
 </nav>
 
@@ -658,7 +658,7 @@
 
 <!-- CONTACTO
 ===============================================================================================-->
-<div class="gray_bg"  id="contac">
+<div class="gray_bg"  id="contaco">
 <div class="clr">
 <div class="container">
 <div class="row">
@@ -673,13 +673,84 @@
 	<h1><span>CONTACTO</span></h1>
 	<div class="tag"><span>Escribeme</span> pronto me pondré en <span>contacto.</span></span></div>
     <div class="container">
-            <div class="row col-md-12 text-center">
-                <div class="pad_top10">&nbsp;</div> <span class="btn btn-4 btn-4d mar_left40"><script src="https://f.formoid.net/g7i.lightbox.js"></script><a href="https://f.formoid.net/g7i" onclick="return formoidbox(this);" target="_blank"><i class="fa fa-envelope-o down_icon"></i>Deja tu mensaje </a></span>
-                
-            </div>
+           
         </div>
 </div></div>
+<div class="container">
+ <div class="row pad_top20">
+ <!-- Contact Form -->
+                <form  id="contact_form" method="post" action="cont.php">
+                <div class="clearfix">
+                <div class="col-md-6 text-center">
+                <div class="control-group">
+                            <input type="text" name="nombre" class="textbox1 element_from_left" placeholder="Nombre*" onblur="revisar(this);"/>
+                </div>
+                        
+               
+                
+                 <div class="control-group">
+                            
+                            <input type="text" name="email" class="textbox1 element_from_left" placeholder="E-mail*" onblur="revisar(this); revisaremail(this);"/>
+                        </div>        
+                        
+                </div>
+                <div class="col-md-6 text-center">
+                <div class="control-group">
+                           <textarea name="mensaje" class="messagebox1 element_from_right" placeholder="Mensaje:"></textarea>
+                        </div>
+                </div>
+                
+                </div>
+                <div class="clearfix"></div>
+                <div class="clearfix">
+                <div class="col-md-12">
+                <div class="clearfix text-center">
+                <div class="clearfix element_from_bottom">
+                 <input type="submit" value="Enviar" class="btn btn-3 btn-3d" />
+                            </div>
+                </div>
+                </div>
+                        </div>
+                
+                </form><div id="post_message" class="post_message"></div>
+                <!-- // Contact Form -->
+ </div>
 
+
+
+<section>
+        <h2>Formulario Contacto - html, css, javascript, php</h2>
+    
+        <form action="prose-form.php" method="post" class="contact-form"  onsubmit="return validar(this);">             
+            <div class="formulario">
+                <div class="column">
+                    <label for="nombre">Nombre <span>(requerido)</span></label>
+                    <input type="text" name="nombre" class="form-input" onblur="revisar(this);"/>
+                    
+                    <label for="email">Email <span>(requerido)</span></label>
+                    <input type="email" name="email" class="form-input" onblur="revisar(this); revisaremail(this);"/>
+                    
+                    <label for="asunto">Asunto <span>(requerido)</span></label>
+                    <input type="text" name="asunto" class="form-input" onblur="revisar(this);"/>
+                </div>
+                
+                <div class="column">
+                    <label for="mensaje">Mensaje </label>
+                    <textarea name="mensaje" class="form-input"></textarea>
+                </div>              
+                
+                <input class="form-btn" type="submit" value="Enviar Mensaje"/>
+            </div>      
+        </form>
+    </section>
+
+
+
+
+
+
+ 
+</div>
 
 </div>
     <div class="clearfix pad_top50">&nbsp;</div>
