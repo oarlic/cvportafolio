@@ -1,31 +1,18 @@
- <?php
+<?php
 
- if(!empty($_POST['nombre']) AND !empty($_POST['email'])){
+// INI CORREO AL QUE SE ENVIAN LOS MENSAJES
+$mail_destinatario = 'ordaz.11r@gmail.com';
+// FIN CORREO AL QUE SE ENVIAN LOS MENSAJES
 
-$to ="ordaz.11r@gmail.com";
-$headers = "Content-Type: text/html; charset=iso-8859-1\n"; 
-$headers .= "From:".$_POST['nombre']."\r\n";			
-$tema="Mensaje desde oarlic.com";
-$mensaje="
-<table border='0' cellspacing='2' cellpadding='2'>
-  <tr>
-    <td width='20%' align='center' bgcolor='#FFFFCC'><strong>Nombre:</strong></td>
-    <td width='80%' align='left'>$_POST[nombre]</td>
-  </tr>
-  <tr>
-    <td align='center' bgcolor='#FFFFCC'><strong>E-mail:</strong></td>
-    <td align='left'>$_POST[email]</td>
-  </tr>
+if (isset ($_POST['enviar'])) {
+$headers .= "From: ".$_POST['email']. "";
+if ( mail ($mail_destinatario, $_POST['asunto'], "Mensaje enviado desde formulario".$_POST['']."\n \n". "E-Mail: ".$_POST['email']."\n". "Nombre: ".$_POST['nombre']."\n". "Asunto: ".stripcslashes ($_POST['asunto'])."\n". "Mensaje: ".stripcslashes ($_POST['mensaje']), $headers )) echo'
 
-  <tr>
-    <td align='center' bgcolor='#FFFFCC'><strong>Comentario:</strong></td>
-    <td align='left'>$_POST[mensaje]</td>
-  </tr>
-</table>
-";
-@mail($to,$tema,$mensaje,$headers); 
-echo "<META HTTP-EQUIV=\"Refresh\" CONTENT=\"0;URL=http://oarlic.com/gracias.html\">"; 
-} else {
-	echo "No se puede enviar el formulario, verifica los campos";
+    Mensaje enviado!
+'; 
+
+else echo '
+    Error! Por favor, inténtelo de nuevo mas tarde.
+'; 
 }
 ?>
