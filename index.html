@@ -717,23 +717,14 @@
  </div>
 
 ---
-
 <form action="cont.php" method="post">
-    <h3>Formulario de contacto</h3>
-    <label>Nombre</label>
-    <br>
-        <input style="width: 300px;" type="text" name="nombre" autocomplete="off" required><br/>
-    <label>Correo electrónico</label>
-    <br>
-        <input style="width: 300px;" type="email" name="email" autocomplete="off" required><br/>
-    <label>Asunto</label>
-    <br>
-        <input style="width: 300px;" type="text" name="asunto" autocomplete="off" required><br/>
-    <label>Mensaje</label>
-    <br>
-        <textarea style="width: 300px;" name="mensaje" rows="5" required></textarea>
-    <br>
-    <button type="submit" name="enviar" id="submit">Enviar</button>
+<label for="nombre">Nombre:</label>
+ <input id="nombre" type="text" name="nombre" placeholder="Nombre y Apellido" required="" />
+ <label for="email">Email:</label>
+ <input id="email" type="email" name="email" placeholder="ejemplo@correo.com" required="" />
+ <label for="mensaje">Mensaje:</label>
+ <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required=""></textarea>
+ <input id="submit" type="submit" name="submit" value="Enviar" />
 </form>
 
 
